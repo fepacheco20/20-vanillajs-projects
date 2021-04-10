@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Array Methods</title>
+</head>
+
+<body>
+    <h1>DOM Array Methods</h1>
+    <div id="painel">
+        <div id="btn-control">
+            <button class="btn" id="btn-add">Add User</button>
+            <button class="btn" id="btn-double">Double Money</button>
+            <button class="btn" id="btn-millionaires">Show only millionaires</button>
+            <button class="btn" id="btn-richest">Sort by richest</button>
+            <button class="btn" id="btn-total">Calculate total</button>
+        </div>
+        <div id="display-control" class="col">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Person</th>
+                        <th scope="col">Money</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h2>Total</h2>
+            <div>
+                <p id="total"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
