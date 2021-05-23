@@ -2,32 +2,26 @@
 
 Projects developed during the [Udemy course](https://www.udemy.com/course/web-projects-with-vanilla-javascript/).
 
-## 1 - Login Page
-- [x] Check name length
+Projects List:
 
-- [x] Check e-mail 
-
-- [x] Check password length
-
-- [x] Check password match  
-
-## 5 - Array Methods
-
-- [x] Use map 
-
-- [x] Use sort 
-
-- [x] Use filter 
-
-- [x] Use reduce
-
-- [x] Use API to generate names
-
-## 8 - Meal Finder 
-
-- [ ] Use meals API 
-
-- [ ] Search meals by name 
-
-- [ ] Generate random meals 
+- [x] 01- Form Validator
+- [ ] 02- Movie Seat Booking
+- [ ] 03- Custom Video Player
+- [ ] 04- Exchange Rate Calculator
+- [x] 05- DOM Array Methods
+- [ ] 06- Menu Slider & Modal
+- [ ] 07- Hangman Game
+- [ ] 08- Meal Finder
+- [ ] 09- Expense Tracker
+- [ ] 10- Music Player
+- [ ] 11- Infinite Scroll Posts
+- [ ] 12- Typing Game
+- [ ] 13- Speech Text Reader
+- [ ] 14- Memory Cards
+- [ ] 15- Lyrics Search App
+- [ ] 16- Relaxer App
+- [ ] 17- Breakout Game
+- [ ] 18- New Year Countdown
+- [ ] 19- Sortable List
+- [ ] 20- Speak Number Guessing Game
 

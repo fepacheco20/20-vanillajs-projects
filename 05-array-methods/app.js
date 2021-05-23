@@ -12,14 +12,13 @@ const totalDisplay = document.querySelector("#total");
 // ********************
 // ARRAY OF USERS 
 // ********************
-let users = []
+const users = [];
 
 // ********************
 // ADD FIRST USERS 
 // ********************
 window.addEventListener('load', function () {
-    createUser();
-    createUser();
+    // createUser(2);
 })
 
 // *************************
@@ -50,17 +49,20 @@ const pushUser = (newName, newMoney) => {
 }
 
 // ADD USER TO HTML
-const createUser = async () => {
-    const newName = await getName();
-    const newMoney = getMoney();
-    const tr = document.createElement("tr");
-    const nameTd = document.createElement("td");
-    const moneyTd = document.createElement("td");
-    nameTd.append(newName);
-    moneyTd.append(`R$ ${newMoney}`);
-    tr.append(nameTd, moneyTd);
-    display.append(tr);
-    pushUser(newName, newMoney);
+const createUser = async (qty = 1) => {
+    for (let i = 0; i < qty; i++) {
+        const newName = await getName();
+        const newMoney = getMoney();
+        const tr = document.createElement("tr");
+        const nameTd = document.createElement("td");
+        const moneyTd = document.createElement("td");
+        nameTd.append(newName);
+        moneyTd.append(`R$ ${newMoney}`);
+        tr.append(nameTd, moneyTd);
+        display.append(tr);
+        pushUser(newName, newMoney);
+    }
+
 }
 
 // *************************
@@ -99,17 +101,23 @@ function updateDisplay(user) {
 // *************************
 
 // ADDING NEW USER 
-addUser.addEventListener("click", async function (e) {
-    createUser();
-})
+addUser.addEventListener("click", () => createUser());
 
 // DOUBLE MONEY (MAP)
 doubleMoney.addEventListener("click", function (e) {
-    const double = users.map(function (user) {
-        return user.money * 2;
+    const newUsers = users.map(function (user) {
+        return {
+            ...user,
+            money: user.money * 2
+        }
     })
 
-    updateArr(users, double);
+    users.splice(0, users.length);
+
+    // for (let i = 0; i < newUsers.length; i++) {
+    //     users.push(newUsers[i]);
+    // }
+    users.push(...newUsers);
 
     cleanDisplay();
 
@@ -123,7 +131,6 @@ showMillioners.addEventListener("click", function (e) {
     });
 
     cleanDisplay();
-
     filtered.forEach(updateDisplay);
 })
 
@@ -143,13 +150,12 @@ sortRichest.addEventListener("click", function (e) {
 // CALCULATE TOTAL (REDUCE)
 showTotal.addEventListener("click", function (e) {
 
-    const total = users.reduce((total, current) =>
-        ({ money: total.money + current.money }));
+    const totalMoney = users.reduce((total, current) =>
+        (total + current.money), 0);
 
-    totalDisplay.innerText = `R$ ${total.money}`;
+    totalDisplay.innerText = `R$ ${totalMoney}`;
 
 })
-
 
 
 
